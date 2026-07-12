@@ -1,52 +1,79 @@
 # Cliptory
 
-**Win+V style clipboard history for macOS.**
+<p align="center">
+  <img src="assets/brand/cliptory-icon.png" width="128" height="128" alt="Cliptory app icon">
+</p>
 
-Cliptory is a native macOS clipboard manager I built to make copied text, images, files, and screenshot text easy to search and paste again. This repository is a public portfolio showcase only: it intentionally does not include source code, build files, app binaries, package archives, or installation instructions.
+<p align="center"><strong>Win+V-style clipboard history, designed natively for macOS.</strong></p>
 
-> Source code and distributable builds are private while Cliptory is being prepared for commercial release.
+<p align="center">
+  Search copied text, images, files, and screenshot text—then paste it back without breaking focus.
+</p>
 
-## Screenshots
+> **Portfolio showcase:** this public repository contains product visuals and a read-only case study. Source code, build files, binaries, packages, and installation instructions are intentionally private while Cliptory is prepared for commercial release.
 
 ![Cliptory feature summary](assets/screenshots/00-showcase-summary.png)
 
+## Product Snapshot
+
+| | |
+| --- | --- |
+| **Platform** | macOS menu-bar app |
+| **Interface** | Native AppKit |
+| **Primary workflow** | Open with a global shortcut, search, select, paste |
+| **Clipboard types** | Text, rich text, images, and files |
+| **Privacy model** | Local by default, encrypted at rest, no analytics |
+| **Optional sync** | Pinned items and collections only |
+
+## The Product
+
+Cliptory solves a small, frequent interruption: losing something that was copied a few minutes ago. A configurable global shortcut opens either a compact menu-bar panel or a full history window. From there, the experience is keyboard-first—search, preview, pin, transform, queue, or paste an item in a few keystrokes.
+
 ![Searchable clipboard history](assets/screenshots/01-history-search.png)
+
+### Fast retrieval
+
+- Exact or fuzzy search across clipboard history.
+- Command-number quick selection and Return-to-paste workflow.
+- Full previews for copied text, images, and file entries.
+- Pinned snippets, named collections, and optional global shortcuts per snippet.
+
+### Flexible paste workflows
+
+- Rich-text, plain-text, or transformed-text paste.
+- Quick transforms for case changes, trimming, URL decoding, and JSON formatting.
+- Paste queue for collecting several items and pasting them in sequence.
+- Per-app rules for ignored apps, plain-text targets, and automatic forgetting.
+
+## On-Device AI/OCR
+
+When a screenshot reaches the clipboard, Cliptory can use Apple Vision to recognize its text and add that text to the local search index. Screenshot content becomes searchable without uploading clipboard data to an external OCR service.
 
 ![On-device AI OCR workflow](assets/screenshots/02-ai-ocr-search.png)
 
+## Privacy by Design
+
+Clipboard history can contain passwords, private messages, customer data, and temporary codes, so privacy is part of the product architecture rather than a secondary setting.
+
+- History is stored locally and encrypted at rest with a Keychain-backed key.
+- Concealed and transient clipboard entries can be filtered automatically.
+- Universal Clipboard content can be excluded.
+- There is no analytics or developer-operated data service.
+- Optional iCloud sync is limited to pinned items and collections; everyday history remains local.
+
 ![Privacy-first settings](assets/screenshots/03-settings-privacy.png)
-
-## What It Does
-
-- Captures clipboard history in a native AppKit menu-bar app.
-- Provides compact popup and full-window history views.
-- Searches clipboard history with exact or fuzzy matching.
-- Supports pinned snippets, named collections, and per-snippet global shortcuts.
-- Lets users paste as rich text, plain text, transformed text, or a queued batch.
-- Previews full copied text, images, and file clipboard entries.
-- Uses Apple's on-device Vision OCR so copied screenshots become searchable.
-- Stores history locally with encryption at rest and a Keychain-backed key.
-- Filters concealed/transient clipboard entries and optional Universal Clipboard content.
-- Adds per-app rules for ignored apps, plain-text paste targets, and auto-forget workflows.
-- Provides optional iCloud sync for pinned items and collections only.
-- Exposes Shortcuts.app actions for retrieving and searching clipboard history.
-
-## AI/OCR Highlight
-
-The AI-facing feature is privacy-preserving OCR for copied screenshots. When an image lands on the clipboard, Cliptory can run Apple's on-device Vision text recognition, fold the recognized text into the item's search index, and keep the result local to the Mac. This makes screenshot content searchable without sending clipboard data to an external service.
 
 ## Engineering Highlights
 
-- Native macOS AppKit UI with menu-bar behavior and global hotkeys.
-- Local persistence layer for text, rich text, images, files, pins, collections, and user preferences.
-- Encryption-at-rest design using a key stored in the macOS Keychain.
-- Clipboard monitoring with handling for concealed entries, transient entries, Universal Clipboard, and source-app metadata.
-- Keyboard-first UX for quick selection, paste queue management, preview, delete, pinning, and plain-text paste.
-- Optional CloudKit path scoped to pinned items and collections, not everyday clipboard history.
-- Shortcuts integration for automation-friendly access to latest and searched clipboard items.
+- Native AppKit menu-bar behavior, global hotkeys, compact and full-window modes.
+- Clipboard monitoring for text, rich text, images, files, source-app metadata, and transient content.
+- Local persistence covering history, encrypted image blobs, pins, collections, and preferences.
+- Keyboard-first interaction across selection, preview, deletion, pinning, queueing, and paste behavior.
+- Shortcuts.app actions for retrieving the latest item and searching clipboard history.
+- Optional CloudKit path deliberately scoped to user-pinned content.
 
-## Repository Policy
+## Repository Boundary
 
-This public repository is for portfolio review only. It contains screenshots, product notes, and branding assets; it does not contain Cliptory's implementation, installable artifacts, or distributable builds.
+This repository is provided for portfolio and product-review purposes only. It includes screenshots, product notes, and branding assets. It does **not** include implementation code, project files, scripts, dependencies, app binaries, archives, or distributable builds.
 
-See [NOTICE.md](NOTICE.md) for usage restrictions on the assets in this showcase.
+See [NOTICE.md](NOTICE.md) for asset usage restrictions.
