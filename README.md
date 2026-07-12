@@ -14,6 +14,18 @@
 
 ![Cliptory feature summary](assets/screenshots/00-showcase-summary.png)
 
+## App in Use
+
+These screens show the product in its primary loop: open the history from the menu bar, search across mixed clipboard content, find text inside a copied screenshot, then tune privacy and paste behavior in Settings.
+
+| History search | Screenshot OCR |
+| --- | --- |
+| ![Cliptory history search](assets/screenshots/01-history-search.png) | ![Cliptory screenshot OCR](assets/screenshots/02-ai-ocr-search.png) |
+
+| Privacy settings | Feature overview |
+| --- | --- |
+| ![Cliptory privacy settings](assets/screenshots/03-settings-privacy.png) | ![Cliptory feature overview](assets/screenshots/00-showcase-summary.png) |
+
 ## Product Snapshot
 
 | | |
